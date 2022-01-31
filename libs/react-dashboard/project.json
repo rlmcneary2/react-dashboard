@@ -1,0 +1,43 @@
+{
+  "root": "libs/react-dashboard",
+  "sourceRoot": "libs/react-dashboard/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/react-dashboard",
+        "tsConfig": "libs/react-dashboard/tsconfig.lib.json",
+        "project": "libs/react-dashboard/package.json",
+        "entryFile": "libs/react-dashboard/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/react-dashboard/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/react-dashboard/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/react-dashboard"],
+      "options": {
+        "jestConfig": "libs/react-dashboard/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
