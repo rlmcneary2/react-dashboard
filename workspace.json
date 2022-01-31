@@ -2,7 +2,6 @@
   "version": 2,
   "projects": {
     "react-dashboard": "libs/react-dashboard",
-    "test": "apps/test",
-    "test-e2e": "apps/test-e2e"
+    "test": "apps/test"
   }
 }
