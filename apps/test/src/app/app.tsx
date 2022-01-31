@@ -1,14 +1,11 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import { ReactDashboard, WidgetCreator } from "@rlmcneary2/react-dashboard";
 
 export function App() {
   return (
-    <>
-      <NxWelcome title="test" />
-      <div />
-    </>
+    <div>
+      <ReactDashboard activeWidgets={[]}>
+        <WidgetCreator availableWidgets={[]} />
+      </ReactDashboard>
+    </div>
   );
 }
-
-export default App;

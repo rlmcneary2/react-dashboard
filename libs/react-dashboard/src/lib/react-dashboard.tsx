@@ -1,14 +1,16 @@
-import './react-dashboard.module.scss';
+import { ReactElement } from "react";
+import { WidgetCreatorProps } from "./create/widget-creator";
+import { WidgetDisplay, WidgetDisplayProps } from "./display/widget-display";
 
-/* eslint-disable-next-line */
-export interface ReactDashboardProps {}
-
-export function ReactDashboard(props: ReactDashboardProps) {
+export function ReactDashboard({ children, ...props }: ReactDashboardProps) {
   return (
-    <div>
-      <h1>Welcome to ReactDashboard!</h1>
-    </div>
+    <>
+      <WidgetDisplay {...props} />
+      {children}
+    </>
   );
 }
 
-export default ReactDashboard;
+interface ReactDashboardProps extends WidgetDisplayProps {
+  children?: ReactElement<WidgetCreatorProps>;
+}
