@@ -1,10 +1,11 @@
-import { Widget } from "../type";
+import { WidgetData } from "../type";
 
 export function WidgetCreator(props: WidgetCreatorProps) {
-  return null;
+  return <div>widget creator</div>;
 }
 
 export interface WidgetCreatorProps {
-  availableWidgets: Widget[];
-  onCreate?: () => void;
+  availableWidgets: WidgetData[];
+  onCreate?: (data: WidgetData) => void;
+  snapToGrid?: boolean;
 }

@@ -1,14 +1,10 @@
 import React from "react";
-import { Widget } from "../type";
 
 export function WidgetDisplay({
-  activeWidgets,
-  snapToGrid
-}: WidgetDisplayProps) {
-  return <div>widgets here...</div>;
+  children
+}: React.PropsWithChildren<WidgetDisplayProps>) {
+  return <div>{children}</div>;
 }
 
-export interface WidgetDisplayProps {
-  activeWidgets: Widget[];
-  snapToGrid?: boolean;
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface WidgetDisplayProps {}

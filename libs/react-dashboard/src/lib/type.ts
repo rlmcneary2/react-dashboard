@@ -1,4 +1,4 @@
-export interface Widget {
+export interface WidgetData {
   name: string;
   uid: string;
 }
